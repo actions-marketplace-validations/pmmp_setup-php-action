@@ -4,12 +4,15 @@
 
 # setup-php-action
 
-This action builds and installs PHP with the needed extensions for [PocketMine-MP](https://github.com/pmmp/PocketMine-MP).
-This is currently used internally for PM's own CIs, and perhaps by plugins in the future.
+This action installs PHP and Composer for [PocketMine-MP](https://github.com/pmmp/PocketMine-MP) from [pmmp/PHP-Binaries releases](https://github.com/pmmp/PHP-Binaries/releases).
+
+This is used internally for PM's own CIs, and can also be used by plugins using GitHub Actions.
+
+Currently only supported on Linux, but MacOS and Windows support is planned for the future.
 
 ## Inputs
 | Name | Required | Possible values | Description |
 |:-----|:--------:|:----------------|:------------|
-| `php-version` | YES | Any version available in [`pmmp/php-build`](https://github.com/pmmp/php-build/tree/auto/share/php-build/definitions) | PHP version, must be a full `major.minor.patch` |
+| `php-version` | YES | Any version available in [`pmmp/PHP-Binaries`](https://github.com/pmmp/PHP-Binaries) (currently `8.1` and `8.2`) | PHP version, must be a full `major.minor.patch` |
 | `install-path` | YES | Folder path | Path to install the binary into (e.g. `./bin`) |
 | `pm-version-major` | NO | `4`, `5` | Major version of [PocketMine-MP](https://github.com/pmmp/PocketMine-MP) to build extensions for |
